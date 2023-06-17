@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robertson & Salem</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="./images/charity-book-shop-logo.jpg" alt="Book shop logo">
+        <h1>Robertson & Salem's Charitable Pages</h1>
+    </header>
+
+    <div class="account-search">
+        <a href="./links/login-signup.html" class="login-signup">LOGIN|SIGN-UP</a>
+        <form>
+            <input type="text" placeholder="Search for Stories, Empower Local Communities..." class="search-bar">
+            <button type="submit" id="search-button">Search</button>
+            
+            <!-- JavaScript has been used below to add functionality to the search button as this was the only feature of the 
+            website that did not perform any actions when clicked. To make the search button responsive to the user, a variable called
+            searchButton has been created. The getElementById method is then being called, passing in the ID of the button which is 
+            search-button (see line 25). A total of three event listeners were created that display messages to the user that indicate 
+            their search results will be ready soon. -->
+            <script>
+                var searchButton = document.getElementById("search-button");
+                searchButton.addEventListener("click", oneMoment);
+                searchButton.addEventListener("click", stillWaiting);
+                searchButton.addEventListener("click", allFinished);
+
+                function oneMoment() {
+                    alert("Patience... we'll find you your next favourite book in no time.");
+                }
+
+                function stillWaiting() {
+                    alert("Just a couple more seconds...");
+                }
+
+                function allFinished() {
+                    alert("All finished, here are your search results. Happy reading!")
+                }
+            </script>
+        </form>
+    </div>
+
+    <nav class="mobile-nav-links">
+        <ul>
+            <li><a href="./links/login-signup.html"><img src="./images/account-icon.jpg" alt="Login/sign up icon"></a></li>
+            <li><a href="./links/about-us.html"><img src="./images/about-us-icon.jpg" alt="About us icon"></a></li>
+            <li><a href="./links/ways-to-donate.html"><img src="./images/donate-icon.jpg" alt="Donate icon"></a></li>
+            <li><a href="./links/basket.html"><img src="./images/basket-icon.jpg" alt="Basket icon"></a></li>
+        </ul>
+    </nav>
+
+    <img id="hero-image" src="./images/hero-image.jpg" alt="Hero image">
+
+    <nav class="nav-links">
+        <ul>
+            <li><a href="./links/about-us.html">ABOUT US</a></li>
+            <li><a href="./links/ways-to-donate.html">WAYS TO DONATE</a></li>
+            <li><a href="./links/basket.html">BASKET</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-container">
+        <div id="article1">
+            <a href="./links/book-of-the-month.html">Book of the Month</a>
+            <img src="./images/tcatb.jpg" alt="Book Cover for The Chosen and The Beautiful by Nghi Vo">
+            <p>This month's top book was chosen by part-time volunteer, Riley who's been volunteering with us for almost
+                a year! Read her thoughts on Nghi Vo's "The Chosen and the Beautiful" (she's convinced all the
+                volunteers to add it to their list).</p>
+        </div>
+
+        <div id="article2">
+            <a href="./links/an-evening-with-rf-kuang.html">An Evening with R.F. Kuang</a>
+            <img src="./images/rf-kuang.jpg" alt="Photograph of writer, R.F. Kuang">
+            <p>Join us for an evening with R.F. Kuang as she performs a reading of her accalimed trilogy, "The Poppy
+                War". 100% of the ticket sales will go towards purchasing classroom supplies for our local primary
+                schools!</p>
+            <p>Book your tickets before the 23rd June to recieve limited edition signed copies of "The Popper War"
+                triology.</p>
+        </div>
+
+        <div id="article3">
+            <a href="./links/summers-hottest-reading-list.html">Summer's Hottest Reading List</a>
+            <p>From Murder at the Mushaira to She Who Became the Sun, read all about the perfect summer reading list.
+                This list was curated by our very own volunteers!</p>
+        </div>
+
+        <div id="article4">
+            <a href="./links/hear-from-our-volunteers.html">Hear From Our Volunteers!</a>
+            <p>Want to know what's it's like to volunteer at Robertson & Salem's? We interviewed our volunteers so you
+                can know all about it (and you can also find out how to sign up as a volunteer today).</p>
+        </div>
+
+        <div id="article5">
+            <a href="./links/what-weve-been-up-to.html">What We've Been Up To...</a>
+            <p>Donating books to local school libraries, organising charity quiz nights, and holding our very first
+                writing competition are just a few of the things we've been up to in recent weeks.</p>
+        </div>
+
+        <div id="article6">
+            <a href="./links/save-our-libraries.html">Save Our Libraries!</a>
+            <p>When we heard our local library was on the brink of shutting down, our volunteers came up with an
+                unlikely idea to help keep Knightsbridge Library's doors open. Find out all about their extraordinary
+                work.</p>
+            <img src="./images/knightsbridge-library.jpeg" alt="Photo of the interior of Knightsbridge Library">
+            <figcaption>Volunteers band together to save their local library! When staff at Knightsbridge Library were
+                told that they would no longer recieve funding, they started online petitons for the library to remain
+                open. These recieved an overwhelming number of responses from local residents who have highlighted the
+                library's longstanding history in the community since 1902.</figcaption>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>FOLLOW US:</p>
+        <a href="./links/twitter.html">TWITTER</a>
+        <a href="./links/instagram.html">INSTAGRAM</a>
+        <a href="./links/facebook.html">FACEBOOK</a>
+    </footer>
+
+</body>
+
+</html>

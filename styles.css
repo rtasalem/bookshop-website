@@ -1,0 +1,399 @@
+/* GLOBAL VARIABLE */
+
+/* Majority of the colours used for the website have been repeatedly applied to different sections. To make the code more easily
+readable, a global variable has been created below to better understand which hex codes have been used throughout.  */
+:root {
+    --bgcolour: #77905b;
+    --headerfooterfont: #f0d003;
+    --headerfooterhover: #fae526;
+    --gridborderandhover: #a5885d;
+    --linkscolour: #865c1d;
+    --gridbg: #fff59d;
+}
+
+/* ESTABLISHING WEBSITE FONT FAMILY */
+
+/* The font family used below which has been applied to the entire website is from a publicly available style sheet provided by Google 
+fonts. This has been applied at the very start to avoid repetitive code. */
+.header,
+body,
+.footer,
+.search-bar {
+    font-family: 'Cousine', monospace;
+}
+
+/* ESTABLISHING WEBSITE COLOUR SCHEME */
+
+/* Below, the colours across the different sections of the website are being set to avoid repetitive code. */
+.header,
+.account-search,
+.footer {
+    background-color: var(--bgcolour);
+}
+
+.header h1,
+.login-signup,
+.footer a,
+.footer p {
+    color: var(--headerfooterfont);
+}
+
+.nav-links ul li a,
+.grid-container a {
+    color: var(--linkscolour);
+}
+
+/* Below the text decoration line has been removed on ALL links found on the web page so that hover effects can be added in using a pseudo
+class. This has been done here to avoid repetitive code. */
+.login-signup, .nav-links ul li a, .grid-container a, .footer a{
+    text-decoration-line: none;
+}
+
+/* HEADER */
+
+/* The display is set to flex so that the website logo and heading (h1) are placed side by side. */
+.header {
+    display: flex;
+}
+
+/* The font size has been set so that it is suitable for the desktop view and it has been centered so that it is evenly spaced
+and does not bunch up against the logo. Text shadow has been added to provide depth (otherwise the appearance of the h1 heading
+appears rather flat). The logo's width and margins have also been adjusted to set its position on the header. */
+.header h1 {
+    font-size: 400%;
+    text-align: center;
+    text-shadow: 3px 3px 3px var(--linkscolour);
+}
+
+.header img {
+    width: 15%;
+    height: auto;
+    margin: 50px 0 10px 75px;
+    max-width: 100%;
+}
+
+/* BODY */
+
+/* BODY - ACCOUNT-SEARCH */
+
+/* The div/class that has been named account-search is specifically for the login/sign-up link and search bar. The display has been set
+so that both are placed side by side in the desktop view. Padding has been added to the bottom of the div so that the search button does
+not directly touch the edge of the background which has been set to have the same background colour as the header (see line 27-32).  */
+.account-search {
+    display: flex;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+/* Immediately below the login/sign-up link's placement has been adjusted using margins to achieve the appearance seen in the desktop view. 
+Following this, a pseudo class has been used so that when the user hovers over the login/sign-up link (and the social media footer links),
+they will notice that the link becomes underlined and takes on a slightly lighter shade of yellow. */
+.login-signup {
+    margin-left: 440px;
+    margin-right: 50px;
+    text-align: center;
+    font-size: 130%;
+}
+
+.login-signup:hover,
+.footer a:hover {
+    color: var(--headerfooterhover);
+    text-decoration: underline;
+}
+
+/* The search bar has been set a specific width so that the message inside of it appears in its entirety i.e. is not cut off. The right 
+margin account for the placement of the search bar along the horizontal axis of the div, the bottom margin adds some space between the 
+search bar and the search button. Rounded corners of the search bar are achieved via the border-radius and padding has been set so that 
+there is space around the text inside of the search bar (it would appear crammed otherwise). */
+.search-bar {
+    width: 65%;
+    margin-right: 200px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+/* When the user clicks inside of the search bar, the colour whill change from white to yellow. */
+.search-bar:focus {
+    background-color: var(--headerfooterhover);
+}
+
+/* The left margin which has been set below account for the centered placement of the search button underneath the search bar. */
+#search-button {
+    margin-left: 175px;
+}
+
+/* Both the mobile navigation links and hero image have a display set to none as they are not part of the desktop view. Instead they 
+will appear in the mobile view of the website. */
+.mobile-nav-links,
+#hero-image {
+    display: none;
+}
+
+/* BODY - NAV */
+
+/* The navigation links have a flex display so that they are placed side by side. The justify content is set so that these links are
+centered on the webpage (take this away and they will jump to the left). As the navigation links have been placed inside of an unordered
+list (ul), the list style type has been removed so that the user does not see the bullet points that are automatically generated when 
+using unordered lists. */
+.nav-links ul {
+    display: flex;
+    justify-content: center; 
+    list-style-type: none;
+    font-weight: bold;
+}
+
+/* Provides spacing around the navigation links. */
+.nav-links ul li {
+    margin: 50px;
+}
+
+/* The underline that is automatically generated when using links (or anchors) in HTML has been removed (see lines 46-50) so that it can 
+be added as a hover effect (using a pseudo class). Note that the same hover affect is also being applied to the links contained in the grid
+container. When the user hovers over these links they will notice that they now have an underline and also appear a slightly lighter shade \
+of brown. */
+.nav-links ul li a {
+    font-size: 175%;
+}
+
+.nav-links ul li a:hover,
+.grid-container a:hover {
+    color: var(--gridborderandhover);
+    text-decoration: underline;
+}
+
+/* BODY - GRID */
+
+/* Here a grid is used to achieve the desried layout of the articles for this charity book shop website that also aligns with the desktop
+wireframe. */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 35px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/* Each of the articles on the website is contained within its own div. Below the appearance of the div's content is being adjusted so that
+it sits centered within each grid and has padding to provide spacing between the content and border (which has also been set to a specific
+width, line-pattern, and colour. */
+.grid-container div {
+    background-color: var(--gridbg);
+    text-align: center;
+    padding: 20px;
+    border: 5px solid var(--gridborderandhover);
+}
+
+/* The display of the anchors in the grid container has been set to block so that that it appears on top of the image/text and not beside
+it. As with other links seen on the website, the text decoration line was previusly removed (see lines 46-50) so that hover effects can be 
+added in. Padding has added to provide some pace between the link and the top of the grid as well as the remaining content. */
+.grid-container a {
+    display: block;
+    font-size: 250%;
+    padding: 20px;
+}
+
+/* The accompanying text of each article is adjusted to the left so that it is easier to read. A font size has also been set for the same
+reason.  */
+.grid-container p {
+    text-align: left;
+    font-size: 145%;
+}
+
+/* Height and width for each image in the grid container is adjusted to better fit in each grid. A border is also added around each image
+that is a slightly lighter shade of brown compared to the border of the grids themselves. An opacity has also been set to 0.8 so that the 
+images blend in will with the yellow background and that the colours are not too harsh. */
+.grid-container img {
+    width: 60%;
+    height: auto;
+    border: 2px solid var(--gridborderandhover);
+    opacity: 0.8;
+}
+
+/* Shown below is the specific layout of the grid. Articles 1-2 take up two columns, articles 3-5 take up three columns, and article 6 is
+a single column spanning the full width of the grid container. */
+#article1 {
+    grid-column: 1/7;
+}
+
+#article2 {
+    grid-column: 7/13;
+}
+
+#article3 {
+    grid-column: 1/5;
+}
+
+#article4 {
+    grid-column: 5/9;
+}
+
+#article5 {
+    grid-column: 9/13;
+}
+
+#article6 {
+    grid-column: 1/13;
+}
+
+/* The figure caption at the bottom of the image show in article 6 has italic font to differentiate it from the text seen above the image
+padding has been added to provide spacing between the image and the figure caption. */
+#article6 figcaption {
+    font-style: italic;
+    padding: 25px;
+}
+
+/* FOOTER */
+
+/* The footer has a flex display so that the social media links appear along a horizontal axis. The text is centered so that it does not 
+sit right up against the left hand-side of the web page. The items have also been aligned on the centre so that text that reads "FOLLOW US:"
+and the social media links all sit on the exact same plane. */
+.footer {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+/* Below the flex-grow has been set to one so that every child (i.e. the "FOLLOW US:" text and the social media links) will be set to an
+equal size within the container. */
+.footer p,
+a {
+    flex-grow: 1;
+}
+
+/* MEDIA QUERIES */
+
+/* 1. TABLET (740px) */
+@media only screen and (max-width: 740px) {
+    /* Font size chagned to be more suitable for this smaller screen width. */
+    .header h1 {
+        font-size: 350%;
+    }
+
+    /* The logo has been removed for the tablet view (and also the mobile view). */
+    .header img {
+        display: none;
+    }
+
+    /* The layout of the login/sign-up links and of the grids has been change to a block display so that it forms into a single column.
+    This is more accessible and easier to read due to the reduced screen width. */
+    .account-search,
+    .grid-container {
+        display: block;
+    }
+
+    /* Placement of the login/sign-up link is adjusted so that it is centered on the screen.  */
+    .login-signup {
+        margin-left: 270px;
+        margin-right: 25px;
+    }
+
+    /* The width of the search bar is readjusted so that the full message inside is displayed. Margins are used to centre the search bar
+    for this tablet view. */
+    .search-bar {
+        width: 55%;
+        margin: 10px 0 10px 150px;
+    }
+
+     /* Margin is used to centre the search button underneath the search bar. */
+    #search-button {
+        margin-left: 320px;
+    }
+
+    .nav-links ul {
+        margin-right: 30px;
+        text-align: center;
+        font-size: 80%;
+    }
+
+    /* A smaller bottom margin is used for the tablet view and the font size has also been readjusted. */
+    .grid-container {
+        margin-bottom: 30px;
+        font-size: 75%;
+    }
+
+    /* Here a margin is included so that there is spacing between each of the divs in the grid container. */
+    .grid-container div {
+        margin: 20px
+    }
+}
+
+/* 2. MOBILE (500px) */
+@media only screen and (max-width: 500px) {
+    /* Font size of the heading (h1) is once again readjusted to be suitable for the narrow screen width. */
+    .header h1 {
+        font-size: 275%;
+    }
+
+    /* For the mobile view, the login/sign-up and navigation links have a display set to none as they will be replaced by icons instead 
+    which is easier to navigate on a mobile screen. */
+    .login-signup,
+    .nav-links {
+        display: none;
+    }
+
+    /* The width of the search bar is again readjusted so that it displays the full message shown inside. Margins are also set to centre
+    the search bar on the web page. */
+    .search-bar {
+        width: 85%;
+        margin: 10px 0 10px 25px;
+    }
+
+    /* A left margin is used to centre the search button underneath the search bar. */
+    #search-button {
+        margin-left: 200px;
+    }
+
+    /* The images that have been used as icons which act as the mobile navigation links now have a flex display so that they are placed
+    side by side. */
+    .mobile-nav-links,
+    .mobile-nav-links ul{ 
+        display: flex;
+    }
+
+    /* A right margin is used to centre the mobile navigation links for this specific screen width. The list style type has been set to 
+    none so that the user does not see the bullet points which are automatically generated when an unordered list is used in HTML. */
+    .mobile-nav-links ul {
+        margin-right: 50px;
+        list-style-type: none;
+    }
+
+    /* The max-width is crucial as it keeps the sizes of the mobile navigation icons reasonable. Without this the icons would be so big that
+    they would take up the entire view of the web page. */
+    .mobile-nav-links img {
+        max-width: 100%;
+    }
+
+    /* When the user taps on the mobile navigation icons the opacity of the icon will change. This allows the user to know which of the
+    icons they have tapped on. */
+    .mobile-nav-links img:hover {
+        opacity: 75%;
+    }
+
+    /* Changes the layout of the grid so that it now adopts a single-column layout. The same is applied to the hero image. */
+    .grid-container,
+    #hero-image {
+        display: block;
+    }
+
+    /* The below parameters have been adjusted to set the placement of the hero image when viewing the web page in the mobile view. */
+    #hero-image {
+        max-width: 88%;
+        height: 50%;
+        margin-left: 18px;
+        padding: 10px;
+    }
+
+    /* Font size within the grid containers has ben readjusted so that it remains readable and accessible, but not too large. */
+    .grid-container {
+        font-size: 85%;
+    }
+
+    /* Below the margin (specifically the spacing) between each div in the grid contianer is readjusted so that there is a smaller gap. */
+    .grid-container div {
+        margin: 5px
+    }
+}

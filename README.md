@@ -1,4 +1,4 @@
-# Charity Bookshop Website 🫴🏽📚
+# Charity Bookshop Website
 ## Background
 This is the first website I ever made. This was submitted as part of my training as a software developer. Only the landing page was created.
 ## Learning Milestones
